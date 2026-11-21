@@ -2,30 +2,30 @@
 const $ = (s) => document.querySelector(s);
 const MENU = {
   Antipasti: [
-    ["Burrata, charred peach, basil oil", "Creamy, smoky, a little sweet.", 16, "V GF"],
-    ["Beef carpaccio, parmesan, rocket", "Cut thin, dressed with lemon.", 18, "GF"],
-    ["Wood-fired focaccia, whipped ricotta", "Rosemary, sea salt, honey.", 12, "V"],
-    ["Grilled octopus, white beans, chili", "Tender from the embers.", 21, "GF"]],
+    ["Burrata, charred peach, basil oil", "Burrata from Andria, peach blistered in the oven.", 16, "V GF"],
+    ["Beef carpaccio, parmesan, rocket", "Sirloin sliced 2 mm thin, 24-month parmesan, lemon.", 18, "GF"],
+    ["Wood-fired focaccia, whipped ricotta", "Baked at the oven mouth, rosemary, acacia honey.", 12, "V"],
+    ["Grilled octopus, white beans, chili", "Simmered 50 minutes, finished on the coals, cannellini.", 21, "GF"]],
   Primi: [
-    ["Tagliolini, white truffle butter", "Hand-cut each morning.", 26, "V"],
-    ["Pappardelle, slow wild boar ragu", "Eight hours on the back of the stove.", 27, ""],
-    ["Ricotta ravioli, sage, brown butter", "Lemon zest, toasted hazelnut.", 24, "V"],
-    ["Risotto, saffron, roasted marrow", "Carnaroli rice, aged parmesan.", 28, "GF"]],
+    ["Tagliolini, white truffle butter", "Twelve yolks per kilo of flour, cut by hand at ten.", 26, "V"],
+    ["Pappardelle, wild boar ragu", "Boar shoulder, juniper and red wine, cooked eight hours.", 27, ""],
+    ["Ricotta ravioli, sage, brown butter", "Sheep's ricotta, toasted Piedmont hazelnuts.", 24, "V"],
+    ["Risotto, saffron, roasted marrow", "Carnaroli rice, Milanese saffron, one bone per plate.", 28, "GF"]],
   Secondi: [
-    ["Wood-roasted langoustine, fennel, citrus", "Finished over vine cuttings.", 38, "GF"],
-    ["Braised short rib, polenta, red wine jus", "Four hours, then the fire.", 36, "GF"],
-    ["Whole sea bream, salsa verde", "For one, baked in the oven mouth.", 34, "GF"],
-    ["Aubergine parmigiana, smoked tomato", "Layered, baked until bronze.", 22, "V"]],
+    ["Roasted langoustine, fennel, orange", "Two langoustines, split and roasted over vine cuttings.", 38, "GF"],
+    ["Braised short rib, polenta, red wine jus", "Four hours in Barolo, then crisped by the fire.", 36, "GF"],
+    ["Whole sea bream, salsa verde", "A 600 g fish baked in a salt crust, serves one.", 34, "GF"],
+    ["Aubergine parmigiana, smoked tomato", "Fior di latte, baked 40 minutes until it catches.", 22, "V"]],
   Dolci: [
-    ["Panna cotta, amaretti, candied orange", "Set soft, served cold.", 11, "V"],
-    ["Tiramisu, espresso, dark cocoa", "Made to order, never frozen.", 12, "V"],
-    ["Flourless chocolate torta, sea salt", "Dense, warm, slightly bitter.", 12, "V GF"],
-    ["Lemon sorbetto, Prosecco", "Sharp and clean.", 10, "V GF"]],
+    ["Panna cotta, amaretti, candied orange", "Vanilla bean, set the same day, crushed amaretti.", 11, "V"],
+    ["Tiramisu, espresso, dark cocoa", "Mascarpone and savoiardi, assembled to order.", 12, "V"],
+    ["Chocolate and almond torta, sea salt", "70% chocolate, ground almonds, no flour.", 12, "V GF"],
+    ["Amalfi lemon sorbetto, Prosecco", "Poured at the table.", 10, "V GF"]],
   Vini: [
-    ["Franciacorta Brut, glass", "Fine bubbles, green apple, brioche.", 14, "V GF"],
-    ["Vermentino, glass", "Salty and bright, good with seafood.", 11, "V GF"],
-    ["Nebbiolo, glass", "Rose petals and tar, long finish.", 16, "V GF"],
-    ["Chianti Classico Riserva, bottle", "Cherry, leather, firm tannins.", 68, "V GF"]],
+    ["Franciacorta Brut, glass", "Lombardy. Fine bubbles, brioche, dry finish.", 14, "V GF"],
+    ["Vermentino, glass", "Sardinia. Salty and sharp, pours well with seafood.", 11, "V GF"],
+    ["Nebbiolo, glass", "Piedmont. Tar and dried rose, firm tannin.", 16, "V GF"],
+    ["Chianti Classico Riserva, bottle", "Tuscany. Sour cherry, leather, 36 months in oak.", 68, "V GF"]],
 };
 const names = Object.keys(MENU);
 const tabs = $("#tabs"), panel = $("#panel"), fv = $("#f-veg"), fg = $("#f-gf"), count = $("#count");
@@ -153,7 +153,7 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
       if (p.y < -10) Object.assign(p, mk(false));
       const f = p.a * (.6 + .4 * Math.sin(t / 300 + p.ph)) * Math.min(1, p.y / (h * .5));
       cx.fillStyle = `rgba(232,170,90,${Math.max(f, 0)})`;
-      cx.shadowColor = "#e8a95a"; cx.shadowBlur = 8;
+      
       cx.beginPath(); cx.arc(p.x, p.y, p.r, 0, 7); cx.fill();
     }
     requestAnimationFrame(loop);

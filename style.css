@@ -35,8 +35,6 @@ nav a:not(.btn):hover{color:var(--gold)}
 .hero-in{position:relative;max-width:760px}
 .lead{max-width:520px;margin:1.5rem auto 2.2rem;font-size:1.1rem;color:var(--txt)}
 .cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.hero h1 em{animation:flick 5s infinite}
-@keyframes flick{0%,100%{text-shadow:0 0 18px #c9a45c55}30%{text-shadow:0 0 28px #c9a45c99}55%{text-shadow:0 0 14px #c9a45c44}75%{text-shadow:0 0 24px #c9a45c80}}
 
 .filters{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;margin-bottom:2rem}
 .chip input{position:absolute;opacity:0}
